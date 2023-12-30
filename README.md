@@ -1,7 +1,3 @@
-# yt-comment-sentiment-analyzer
-YT Comment Analyzer using LSTM
-
-
 # YouTube Comment Sentiment Analyzer
 The YouTube Comment Analyzer is a web application that allows users to analyze the sentiment of comments on a YouTube video. By simply providing the YouTube video URL, the application leverages the YouTube API and a pretrained LSTM model to fetch all the comments and categorize them into positive, negative, or neutral sentiments. This tool serves as a powerful way to understand the overall reception of a video based on the sentiments expressed by its viewers.
 
