@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="https://kit.fontawesome.com/1114c6529b.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #f2f2f2; */
+            background-color: black;
+            padding: 20px;
+        }
+
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.6s;
+            padding: 10px 100px;
+            background: #fff;
+        }
+
+        header .logo {
+            position: relative;
+            height: 40px;
+        }
+
+        header ul {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 200px;
+        }
+
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+
+        header ul li a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            letter-spacing: 2px;
+            font-weight: 500px;
+            transition: 0.6s;
+            font-weight: 551;
+        }
+
+        div {
+            color: #fff;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            /* margin-top: 40px; */
+        }
+
+        h2{
+            text-align: center;
+            color: #fff;
+        }
+
+        h3{
+            margin-top: 50px;
+            color: #fff;
+        }
+
+        /* ol, ul {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        } */
+
+        #thanks{
+            margin-top: 35px;
+        }
+        p {
+            color: #fff;
+            line-height: 1.6;
+        }
+
+
+        footer{
+            margin-left: -28px;
+            font-family: 'poppins', sans-serif;
+            width: 100%;
+            position: absolute;
+            background: linear-gradient(to right, #00093c,#2d0b00);
+            color: #fff;
+            padding: 30px 0 0px;
+            border-top-left-radius: 115px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .row{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .col{
+            flex-basis: 15%;
+            padding: 5px;
+        }
+        .col:nth-child(2), .col:nth-child(3){
+            flex-basis: 5%;
+        }
+        .logo_footer{
+            width: 200px;
+            margin-bottom: 30px;
+
+        }
+        .col h3{
+            width: fit-content;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .col p{
+            margin: 0;
+        }
+        /* .col #pad{
+            margin-top: 10px;
+        } */
+        .col .email-id{
+            width: fit-content;
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .col ul li{
+            list-style: none;
+            margin-left: -40px;
+            margin-bottom: 12px;
+        }
+        .col ul li a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .footer-form{
+            margin-top: -100px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 50px;
+            margin-right: -10px;
+            padding-right: 0;
+            
+        }
+        .footer-form input{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .fa-regular{
+            font-size: 18px;
+        }
+        .footer-form input{
+            background: transparent;
+            color: #ccc;
+            border: 0;
+            outline: none;
+        }
+        .footer-form button{
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .fa-solid{
+            font-size: 16px;
+            color: #ccc;
+        }
+        .social-icons .fa-brands{
+            width: 40px;
+            height: 40px;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            color: #000;
+            background: #fff;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        hr{
+            width: 90%;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            margin: 7px auto;
+        }
+        .copyright{
+            text-align: center;
+        }
+        .underline{
+            width: 100%;
+            height: 5px;
+            background: #767676;
+            border-radius: 3px;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            overflow: hidden;
+        }
+        .underline span{
+            width: 15px;
+            height: 100%;
+            background: #fff;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            animation: moving 2s linear infinite;
+        }
+        @keyframes moving {
+            0%{
+                left: -20px;
+            }
+            100%{
+                left: 100px;
+            }
+        }
+    </style>
+    <script>
+        // Get the about link element
+        const navLink = document.getElementsByClassName('nav-link');
+      
+        // Add a click event listener to the about link
+        navLink.addEventListener('click', (event) => {
+          event.preventDefault();
+          const url = navLink.getAttribute('href');
+          history.pushState(null, '', url);
+        });
+      </script>  
+</head>
+
+<body>
+    <header>
+        {% load static %}
+        <img src="{% static 'logo.png' %}" alt="" class="logo">
+        <ul>
+            <li><a href="/index" class="nav-link">Home</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/services" class="nav-link">Services</a></li>
+            <li><a href="#foot" class="nav-link">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="about-container">
+        <h2>About YouTube Comment Sentiment Analyzer</h2>
+        <p>&nbsp;&nbsp;Welcome to the YouTube Comment Sentiment Analyzer! Our web application utilizes YouTube API to extract
+            comments from the video based on the user's
+            input, and then a powerful LSTM (Long Short-Term Memory) model trained on the IMDb dataset to analyze the
+            sentiment of YouTube comments and classify them as either positive or negative.</p>
+
+        <h3>About Developer</h3>
+        <p>&nbsp;&nbsp;I'm a Computer Science student passionate about natural language processing and
+            sentiment analysis. My goal is to provide accurate sentiment analysis of YouTube comments to help users
+            understand the sentiment landscape of videos and foster meaningful discussions.</p>
+        <p>I'm continuously working to improve the accuracy and performance of our sentiment analysis model,
+            leveraging cutting-edge techniques and incorporating user feedback.</p>
+
+        <p id="thanks">&nbsp;&nbsp;Thank you for using the YouTube Comment Sentiment Analyzer! We hope our application enhances your YouTube
+            experience and provides valuable insights into the sentiment expressed by viewers.</p>
+    </div>
+
+    <footer id="foot">
+        <div class="row">
+            <div class="col">
+                {% load static %}
+                <img src="{% static 'logo_footer.png' %}" class="logo_footer" alt="logo">
+                <p>Try our new YouTube comment analyzer tool to analyze the sentiments of YouTube video comments.</p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="underline"><span></span></div>
+                </h3>
+                <p id="pad">Curaj</p>
+                <p>Kishangarh, Ajmer</p>
+                <p>Rajasthan, PIN 305817, India</p>
+                <p class="email-id">amulyakumarpadhan3@gmail.com</p>
+                <h4>+91-9556105542</h4>
+            </div>
+            <div class="col">
+                <h3>Links <div class="underline"><span></span></div>
+                </h3>
+                <ul>
+                    <li><a href="/index" class="nav-link">Home</a></li>
+                    <li><a href="/about" class="nav-link">About</a></li>
+                    <li><a href="/services" class="nav-link">Services</a></li>
+                    <li><a href="#foot" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Newsletter <div class="underline"><span></span></div>
+                </h3>
+                <form class="footer-form">
+                    <i class="fa-regular fa-envelope" style="margin-left: -18px;"></i>
+                    <input type="email" placeholder="Enter your email id" required>
+                    <button><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">YT Cmt Analyzer &copy; 2023 - All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>

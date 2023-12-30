@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YouTube Video Link Input Form</title>
+    <script src="https://kit.fontawesome.com/1114c6529b.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            padding: 20px;
+        }
+
+        form {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 100px;
+            padding-bottom: 200px;
+            padding-bottom: 230px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        form .logo1{
+            text-align: center;
+            font-family: 'Kalam', cursive;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 3em;
+        }
+        form .logo2{
+            text-align: center;
+            font-family: 'Kalam', cursive;
+            color: rgb(235, 60, 60);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 3.8em;
+        }
+
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-top: 50px;
+            color: #fff;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #ddd;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #008CBA;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #006080;
+        }
+
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.6s;
+            padding: 10px 100px;
+            background: #fff;
+        }
+
+        header .logo {
+            position: relative;
+            height: 40px;
+        }
+
+        header ul {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 200px;
+        }
+
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+
+        header ul li a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            letter-spacing: 2px;
+            font-weight: 500px;
+            transition: 0.6s;
+            font-weight: 551;
+        }
+
+        div {
+            color: #fff;
+        }
+
+        .result {
+            text-align: center;
+            margin-bottom: 300px;
+        }
+
+        .inner {
+            display: inline-block;
+            padding-top: 20px;
+            margin: 10px;
+        }
+
+        .inner img {
+            height: 55vh;
+            width: 75vh;
+        }
+        #res_head {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 650;
+            font-size: 1.5em;
+            padding-bottom: 20px;
+        }
+
+        #pos_per {
+            color: rgb(44, 233, 44);
+        }
+
+        #neg_per {
+            color: red;
+        }
+
+        #positive {
+            color: rgb(44, 233, 44);
+            font-size: 1.3em;
+        }
+
+        #negative {
+            color: red;
+            font-size: 1.3em;
+        }
+        footer{
+            margin-left: -28px;
+            font-family: 'poppins', sans-serif;
+            width: 100%;
+            position: absolute;
+            background: linear-gradient(to right, #00093c,#2d0b00);
+            color: #fff;
+            padding: 30px 0 0px;
+            border-top-left-radius: 115px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .row{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .col{
+            flex-basis: 15%;
+            padding: 5px;
+        }
+        .col:nth-child(2), .col:nth-child(3){
+            flex-basis: 5%;
+        }
+        .logo_footer{
+            width: 200px;
+            margin-bottom: 30px;
+
+        }
+        .col h3{
+            width: fit-content;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .col p{
+            margin: 0;
+        }
+        /* .col #pad{
+            margin-top: 10px;
+        } */
+        .col .email-id{
+            width: fit-content;
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .col ul li{
+            list-style: none;
+            margin-left: -40px;
+            margin-bottom: 12px;
+        }
+        .col ul li a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .footer-form{
+            margin-top: -100px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 50px;
+            margin-right: -10px;
+            padding-right: 0;
+            
+        }
+        .footer-form input{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .fa-regular{
+            font-size: 18px;
+        }
+        .footer-form input{
+            background: transparent;
+            color: #ccc;
+            border: 0;
+            outline: none;
+        }
+        .footer-form button{
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .fa-solid{
+            font-size: 16px;
+            color: #ccc;
+        }
+        .social-icons .fa-brands{
+            width: 40px;
+            height: 40px;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            color: #000;
+            background: #fff;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        hr{
+            width: 90%;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            margin: 7px auto;
+        }
+        .copyright{
+            text-align: center;
+        }
+        .underline{
+            width: 100%;
+            height: 5px;
+            background: #767676;
+            border-radius: 3px;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            overflow: hidden;
+        }
+        .underline span{
+            width: 15px;
+            height: 100%;
+            background: #fff;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            animation: moving 2s linear infinite;
+        }
+
+
+        .messages {
+            list-style-type: none;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .messages li {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        .messages li.warning {
+            background-color: #ffeeba;
+            color: #856404;
+        }
+
+        /* Add more styles for different message types if needed */
+
+
+
+        @keyframes moving {
+            0%{
+                left: -20px;
+            }
+            100%{
+                left: 100px;
+            }
+        }
+    </style>
+    <script>
+        // Get the about link element
+        const navLink = document.getElementsByClassName('nav-link');
+      
+        // Add a click event listener to the about link
+        navLink.addEventListener('click', (event) => {
+          event.preventDefault();
+          const url = navLink.getAttribute('href');
+          history.pushState(null, '', url);
+        });
+
+
+        function handleFormSubmit(event) {
+            var analyzeButton = document.getElementById('analyze-button');
+            analyzeButton.disabled = true;
+            analyzeButton.textContent = 'Analyzing...';
+            return true; // Submit the form
+        }
+      </script>      
+</head>
+
+<body>
+    <header>
+        {% load static %}
+        <img src="{% static 'logo.png' %}" alt="" class="logo">
+        <ul>
+            <li><a href="/index" class="nav-link">Home</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/services" class="nav-link">Services</a></li>
+            <li><a href="#foot" class="nav-link">Contact</a></li>
+        </ul>
+    </header>
+
+    <form method="post" action="{% url 'index' %}" onsubmit="return handleFormSubmit(event)">
+        {% csrf_token %}
+        <a href="#" class="logo1">YouTube Comment</a><br>
+        <a href="#" class="logo2">Sentiment Analyzer</a>
+        <label for="video-link">Enter a YouTube video link:</label>
+        <input type="text" id="name" name="name" placeholder="https://www.youtube.com/watch?v=...">
+        <button id="analyze-button" type="submit">Analyze</button>
+    </form>
+    <br>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="result{% if processing_done %} result-section{% endif %}">
+        <span id="res_head"><u>Result of Sentiment Analysis</u></span><br><br><br>
+        <strong id="pos_per">Positive Comments: </strong>{{positive_pct}}% <br>
+        <strong id="neg_per">Negative Comments: </strong>{{negative_pct}}%<br>
+
+        <div class="inner">
+            {% if graph_image %}
+            <img src="data:image/png;base64,{{ graph_image }}" alt="Graph">
+            {% endif %}
+        </div>
+        <div class="inner">
+            <strong id="positive">Positive Comments:</strong> <br>
+            {% for comment in positive_comments %}
+                {{ comment }}<br>
+            {% empty %}
+                No positive comments.
+            {% endfor %}
+        </div><br>
+
+        <div class="inner"><strong id="negative">Negative Comments:</strong><br>
+            {% for comment in negative_comments %}
+            {{ comment }}<br>
+            {% empty %}
+                No negative comments.
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        // Scroll to the result section if processing is done
+        window.addEventListener('DOMContentLoaded', function () {
+            var resultSection = document.querySelector('.result-section');
+            if (resultSection) {
+                resultSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+    <footer id="foot">
+        <div class="row">
+            <div class="col">
+                {% load static %}
+                <img src="{% static 'logo_footer.png' %}" class="logo_footer" alt="logo">
+                <p>Try our new YouTube comment analyzer tool to analyze the sentiments of YouTube video comments.</p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="underline"><span></span></div></h3>
+                <p id="pad">Curaj</p>
+                <p>Kishangarh, Ajmer</p>
+                <p>Rajasthan, PIN 305817, India</p>
+                <p class="email-id">amulyakumarpadhan3@gmail.com</p>
+                <h4>+91-9556105542</h4>
+            </div>
+            <div class="col">
+                <h3>Links <div class="underline"><span></span></div></h3>
+                <ul>
+                    <li><a href="/index" class="nav-link">Home</a></li>
+                    <li><a href="/about" class="nav-link">About</a></li>
+                    <li><a href="/services" class="nav-link">Services</a></li>
+                    <li><a href="#foot" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Newsletter <div class="underline"><span></span></div></h3>
+                <form class="footer-form">
+                    <i class="fa-regular fa-envelope" style="margin-left: -18px;"></i>
+                    <input type="email" placeholder="Enter your email id" required>
+                    <button><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">YT Cmt Analyzer &copy; 2023 - All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
